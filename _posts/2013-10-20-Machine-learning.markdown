@@ -57,32 +57,32 @@ Now that we have a hypthesis and a cost function to calculate its accuracy, we s
 Gradient descent is done by plotting a 3D plot of p1, p2 and its cost for entire dataset. The most appropriate hypothesis can be retrieved by taking the "pit" of this plot. Given any point on this point, we can acertain which direction to move to the pit of the plot by noting its derivative which is tangent of line to that point. We do this till we get a point with tangent = 0 which means it is the pit of the plot. 
 
 In general , gradient descent can be defined as 
-````
+{% highlight python %}
 repeat until convergence {
 	p1 = p1 - l * d/dp1 (J(p1,p2))
 	p2 = p1 - l * d/dp2 (J(p1,p2)) 
 }
+{% endhighlight %}
 where l is the learning rate (also called alpha)
-````
 
 Specifically for Linear regression for one variable , this can be written as 
 
-````
+{% highlight python %}
 repeat until convergence {
 	p1 = p1 - l * d/dp1 (1/2m * sum( (p1 + p2*x -y) ^2))
 	p2 = p2 - l * d/dp2 (1/2m * sum( (p1 + p2*x -y)^2 ) 
 }
-````
+{% endhighlight %}
 
 which can be shortened to 
 
-````
+{% highlight python %}
 repeat until convergence {
 	p1 = p1 - (l/m) *  sum( (p1  -y) ) 
-   p2 = p2 - (l/m) *  sum( (p2*x -y))
+    p2 = p2 - (l/m) *  sum( (p2*x -y))
 }
+{% endhighlight %}
 
-````
 
 
 
